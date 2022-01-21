@@ -1,0 +1,355 @@
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+
+  </style>
+</head>
+
+<body class="text-dark fs-6">
+  <!-- header -->
+  <header class="py-4 ml-5 opacity-50">
+    <div class="container-fluid pl-0">
+      <div class="row border-bottom border-warning border-4">
+        <div class="col-4">
+          <div class="w-60">
+           <img class="w-100" style="height:70px" src='data:image/png;base64,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'/>
+          </div>
+        </div>
+        <div class="col-8 pl-4">
+          <h6 class="text-uppercase mb-1">
+            <strong>
+              TỔNG CÔNG TY CỔ PHẦN BẢO HIỂM SÀI GÒN–HÀ NỘI
+            </strong>
+          </h6>
+          <p class="mb-0 lh-1 fs-7">
+            Địa chỉ: Số 86 Bà Triệu, Phường Hàng Bài, Quận Hoàn Kiếm, Hà Nội
+          </p>
+          <p class="lh-3 mb-0 fs-7">
+            <span>Tel: 04.3793 1111 </span>
+            <span class="ml-5 mr-4">Fax: 04.3793 1155</span>
+            <span>Website:  www@bshc.com.vn</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- end -->
+  <!-- main -->
+  <main class="">
+    <div class="container-fluid ">
+      <div class="text-center">
+        <h5 class="mb-0"><strong class="text-uppercase">GIẤY YÊU CẦU BẢO HIỂM </strong></h5>
+
+        <h5 class="text-danger"><strong class="text-uppercase">BẢO HIỂM BẢO AN TOÀN GIA</strong></h5>
+      </div>
+
+      <table class="table table-xs table-borderless border border-bottom-0">
+        <tbody>
+          <tr>
+            <td colspan="3" class="text-uppercase text-white bg-warning"><strong>BÊN MUA BẢO HIỂM </strong></td>
+          </tr>
+          <tr>
+            <td class="w-35">
+              <table class="table table-xs table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="text-nowrap align-top p-0 pr-2">
+                      Họ tên:
+                    </td>
+                    <td class="w-100 p-0">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td class="w-25">
+              
+              <table class="table table-xs table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="text-nowrap align-top p-0 pr-2">
+                      Ngày sinh:
+                    </td>
+                    <td class="w-100 p-0">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td class="w-40">
+              <table class="table table-xs table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="text-nowrap align-top p-0 pr-2">
+                      Giới tính:
+                    </td>
+                    <td class="w-100 p-0">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              
+              <table class="table table-xs table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="text-nowrap align-top p-0 pr-2">
+                      Số CMND/ CCCD/ HC:
+                    </td>
+                    <td class="w-100 p-0">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td>
+              
+              <table class="table table-xs table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="text-nowrap align-top p-0 pr-2">
+                      Ngày cấp:
+                    </td>
+                    <td class="w-100 p-0">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td>
+              <table class="table table-xs table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="text-nowrap align-top p-0 pr-2">
+                      Nơi cấp:
+                    </td>
+                    <td class="w-100 p-0">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="border-bottom-0" colspan="2">
+              <table class="table table-xs table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="text-nowrap align-top p-0 pr-2">
+                      Mã bảo hiểm y tế:
+                    </td>
+                    <td class="w-100 p-0">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td class="border-bottom-0">
+              
+              <table class="table table-xs table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="text-nowrap align-top p-0 pr-2">
+                      Mã số thuế cá nhân:
+                    </td>
+                    <td class="w-100 p-0">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+          </td>
+          </tr>
+          <tr>
+            <td class="border-bottom-0" colspan="2">
+              
+              <table class="table table-xs table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="text-nowrap align-top p-0 pr-2">
+                      Email:
+                    </td>
+                    <td class="w-100 p-0">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td class="border-bottom-0">
+              
+              <table class="table table-xs table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="text-nowrap align-top p-0 pr-2">
+                      Số điện thoại:
+                    </td>
+                    <td class="w-100 p-0">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="border-bottom-0" colspan="3">
+              
+              <table class="table table-xs table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="text-nowrap align-top p-0 pr-2">
+                      Địa chỉ:
+                    </td>
+                    <td class="w-100 p-0">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+      </table>
+
+      <table class="table table-xs text-center align-middle text-break">
+        <tbody>
+          <tr>
+            <td colspan="12" class="text-uppercase text-white bg-warning text-left"><strong>NGƯỜI ĐƯỢC BẢO HIỂM (NĐBH)
+              </strong></td>
+          </tr>
+
+          <tr>
+            <td class="text-nowrap px-1">STT</td>
+            <td class="text-nowrap">Họ tên</td>
+            <td class="text-nowrap">Ngày sinh</td>
+            <td>Giới tính</td>
+            <td class="text-nowrap">Số <br>CMND/<br>CCCD/HC</td>
+            <td>Mã <br>BHYT</td>
+            <td>MST</td>
+            <td class="text-nowrap">Mối<br> quan hệ </td>
+            <td class="text-nowrap">Ngày bắt đầu <br> thời hạn BH</td>
+            <td class="text-nowrap">Ngày kết thúc<br> thời hạn BH</td>
+            <td class="text-nowrap">Gói bảo <br>hiểm</td>
+            <td class="text-nowrap">Số tiền<br> bảo hiểm</td>
+          </tr>
+
+          <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+
+          <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+
+          <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+      <table class="table table-xs">
+        <tbody>
+          <tr>
+            <td class="text-uppercase text-white bg-warning text-left border-top-0"><strong>PHẠM VI BẢO HIỂM</strong>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="pl-3">
+              <p>1. Tử vong do tai nạn</p>
+
+              <p>2. Thương tật toàn bộ vĩnh viễn do tai nạn </p>
+
+              <p>3. Thương tật bộ phận vĩnh viễn do tai nạn</p>
+
+              <p>4. Thương tật tạm thời do tai nạn</p>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="text-uppercase text-white bg-warning text-left"><strong>PHẠM VI ĐỊA LÝ</strong></td>
+          </tr>
+
+          <tr>
+            <td>Việt Nam</td>
+          </tr>
+
+          <tr>
+            <td class="text-uppercase text-white bg-warning text-left"><strong>CAM KẾT</strong></td>
+          </tr>
+
+          <tr>
+            <td class="text-justify">
+              <p class="lh-base">1. Tôi/Chúng tôi cam kết rằng đã đọc kỹ Quy tắc bảo hiểm tai nạn con người ban hành kèm
+                theo Quyết định số 1107/2014/QĐ-BSH-QLNV ngày 19/11/2014 của Tổng Giám đốc Tổng Công ty CP Bảo hiểm Sài
+                Gòn - Hà Nội và đã được nghe đại diện BSH giải thích đầy đủ các điều kiện, điều khoản của Quy tắc,
+                chương trình bảo hiểm Bảo An Toàn Gia và thông báo mức phí áp dụng.</p>
+
+              <p class="lh-base">2. Tôi/Chúng tôi cam đoan rằng tất cả những lời khai trên là đúng, nếu không BSH có quyền từ chối một phần hoặc toàn bộ trách nhiệm bồi thường theo Hợp đồng bảo hiểm. </p>
+
+              <p class="lh-base">3.Tôi/Chúng tôi đồng ý sẽ thông báo cho BSH về bất kỳ sự thay đổi và đồng ý rằng Giấy yêu cầu bảo hiểm sẽ là cơ sở của Hợp đồng giữa Tôi/Chúng tôi và BSH. Nếu sai sót Tôi/Chúng tôi xin chịu hoàn toàn trách nhiệm. </p>
+
+              <p class="lh-base">4. Tôi/Chúng tôi đồng ý việc đóng phí đầy đủ, đúng quy định là cơ sở pháp lý cho Hợp đồng bảo hiểm giữa Tôi/Chúng tôi và BSH.</p>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+
+      <div class="row">
+        <div class="col-5 float-right text-center mt-4">
+          <p class="mb-0 fs-7">
+            <em class=" input-group my-3"><span class="form-control form-dotted min-w-10"></span>, ngày
+              <span class="form-control form-dotted min-w-10"></span> tháng 
+              <span class="form-control form-dotted  min-w-10"></span> năm
+              <span class="form-control form-dotted min-w-10"></span></em>
+          </p>
+
+          <h6 ><strong>BÊN MUA BẢO HIỂM</strong></h6>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+    <style>
+    </style>
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header class="pt-2">
+            <table class="table table-borderless border-bottom border-4 border-warning mb-2">
+                <tbody>
+                    <tr>
+                        <td class="pl-3 p-0">
+                            <img style="height: 100px;"
+                                src='data:image/png;base64,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' />
+                        </td>
+                        <td class="text-uppercase align-middle text-center text-warning p-0">
+                            <strong class="pt-4 mb-0 fs-4">GIẤY YÊU CẦU BẢO HIỂM</strong>
+                        </td>
+                        <td class="p-0">
+                            <img class="float-right" style="width:240px"
+                                src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALsAAAAtCAIAAAB5zY1jAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RDE0NzA5NTA2MEY4MTFFQzg5NUNDQjgyRkNEOUQ5OTciIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RDE0NzA5NTE2MEY4MTFFQzg5NUNDQjgyRkNEOUQ5OTciPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpEMTQ3MDk0RTYwRjgxMUVDODk1Q0NCODJGQ0Q5RDk5NyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpEMTQ3MDk0RjYwRjgxMUVDODk1Q0NCODJGQ0Q5RDk5NyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PiccaJkAAAnxSURBVHja7FxtTFNZ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' />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </header>
+        <main>
+            <p class="mb-0 text-right">
+                <span>Số:</span>
+                <span class="form-control border-0 min-w-20"></span>
+            </p>
+            <table class="table table-xs table-dotted">
+                <tbody>
+                    <tr>
+                        <td colspan="4" class="bg-warning-darkest text-white text-cente border-bottom-0">
+                            <strong class="text-uppercase">THÔNG TIN YÊU CẦU CỦA CHỦ XE</strong>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4" class="bg-warning-darkest text-white text-uppercase">
+                            <strong>THÔNG TIN VỀ NGƯỜI ĐƯỢC BẢO HIỂM</strong>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="align-top border-right-0">
+                            Tên:
+                        </td>
+                        <td class="border-left-0 w-58">
+                        </td>
+                        <td class="align-top w-5 text-nowrap border-right-0 ">
+                            Điện thoại:
+                        </td>
+                        <td class="border-left-0">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="align-top w-5 text-nowrap border-right-0">
+                            Địa chỉ:
+                        </td>
+                        <td class="border-left-0">
+                        </td>
+                        <td class="align-top border-right-0 ">
+                            Email:
+                        </td>
+                        <td class="border-left-0">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="4" class="text-upperase text-white bg-warning-darkest">
+                            <strong>THÔNG TIN TỔ CHỨC/NGƯỜI THỤ HƯỞNG BẢO HIỂM</strong>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="align-top border-right-0">
+                            Tên:
+                        </td>
+                        <td class="border-left-0" >
+                        </td>
+                        <td class="align-top border-right-0">
+                            Điện thoại:
+                        </td>
+                        <td class="border-left-0">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="align-top border-right-0">
+                            Địa chỉ:
+                        </td>
+                        <td class="border-left-0">
+                        </td>
+                        <td class="align-top border-right-0">
+                            Email:
+                        </td>
+                        <td class="border-left-0">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="table table-xs table-dotted">
+              <tbody>
+                  <tr>
+                    <td colspan="6" class="text-upperase text-white bg-warning-darkest">
+                        <strong>THÔNG TIN VỀ XE ĐƯỢC BẢO HIỂM</strong>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="align-top border-right-0 w-5 text-nowrap">
+                        - Biển kiểm soát:
+                    </td>
+                    <td class="border-left-0 w-20">
+                    </td>
+                    <td class="align-top border-right-0 w-5 text-nowrap">
+                        - Năm/nơi sản xuất:
+                    </td>
+                    <td class="border-left-0 w-17">
+                    </td>
+                    <td class="align-top border-right-0 w-5 text-nowrap">
+                        - Dung tích/trọng tải:
+                    </td>
+                    <td class="border-left-0">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="align-top border-right-0">
+                        - Nhãn hiệu:
+                    </td>
+                    <td class="border-left-0">
+                    </td>
+                    <td class="align-top border-right-0">
+                        - Số chỗ ngồi:
+                    </td>
+                    <td class="border-left-0">
+                    </td>
+                    <td class="align-top border-right-0 w-5 text-nowrap">
+                        - Mục đích sử dụng:
+                    </td>
+                    <td class="border-left-0">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="align-top border-right-0">
+                        - Số khung: 
+                    </td>
+                    <td class="border-left-0">
+                    </td>
+                    <td class="align-top border-right-0">
+                        - Số máy: 
+                    </td>
+                    <td class="border-left-0">
+                    </td>
+                    <td class="align-top border-right-0 w-5 text-nowrap"> 
+                        - Dòng/Loại xe:
+                    </td>
+                    <td class="border-left-0">
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table table-xs">
+                <tbody>
+                    <tr>
+                        <td colspan="2" class="text-upperase text-white bg-warning-darkest">
+                            <strong>CÁC LOẠI HÌNH BẢO HIỂM YÊU CẦU</strong>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="text-warning">
+                            <strong>1. TNDS tự nguyện</strong>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>TNDS đối với bên thứ ba:</strong>
+                        </td>
+                        <td>
+                            <strong>TNDS đối với hành khách:</strong>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            - MTN về người: <span class="form-control border-dotted min-w-20"></span> triệu đồng/1
+                            người/vụ.
+                        </td>
+                        <td>
+                            - Số lượng hành khách: <span class="form-control border-0 min-w-25"></span> người
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            - MTN về tài sản: <span class="form-control border-dotted min-w-25"></span> triệu đồng/vụ.
+                        </td>
+                        <td>
+                            - MTN : <span class="form-control border-0 min-w-25"></span> đồng/1 người/vụ.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="text-warning">
+                            <strong>2. Tai nạn lái, phụ xe và NNTX</strong>
+                        </td>
+                        <td class="text-warning">
+                            <strong>3. TNDS của chủ xe đối với hàng hóa</strong>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            - Số người: <span class="form-control border-0 min-w-25"></span> người.
+                        </td>
+                        <td>
+                            - Trọng tải: <span class="form-control border-0 min-w-25"></span> tấn
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            - Số tiền bảo hiểm: <span class="form-control border-0 min-w-25"></span> đồng/1 người/vụ.
+                        </td>
+                        <td>
+                            - MTN: <span class="form-control border-0 min-w-25"></span> đồng/1 tấn.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="text-warning">
+                            <strong>4. Bảo hiểm vật chất xe</strong>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            - Giá trị BH (khai báo):<span class="form-control border-dotted min-w-25"></span>triệu đồng.
+                            <span class="pl-5">- STBH (theo yêu cầu):</span> <span
+                                class="form-control border-0 min-w-25"></span> đồng.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="text-warning">
+                            <strong>5. Mức miễn thường có khấu trừ</strong>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <span class="pl-5">500.000 đồng/vụ</span> <span class="px-5">□</span> 1.000.000 đồng/vụ
+                            <span class="px-5">□</span> Khác: <span class="form-control border-dotted min-w-20"></span>
+                            đồng/vụ.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <strong class="text-warning">6. Điều khoản bổ sung: </strong>Liệt kê tóm tắt điều khoản bổ
+                            sung tham gia (BS01, BS02, BS06, BS07, BS09…
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="text-warning">
+                            <strong>7. Các phụ tùng không theo tiêu chuẩn xe</strong>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <strong class="text-warning-darkest">8. Thời hạn bảo hiểm: </strong>Từ
+                            <span class="form-control border-0 min-w-5"></span> ngày
+                            <span class="form-control border-0 min-w-5"></span> tháng
+                            <span class="form-control border-0 min-w-5"></span> năm 20
+                            <span class="form-control border-dotted min-w-5"></span> đến
+                            <span class="form-control border-0 min-w-5"></span> ngày
+                            <span class="form-control border-0 min-w-5"></span> tháng
+                            <span class="form-control border-0 min-w-5"></span> năm 20
+                            <span class="form-control border-dotted min-w-5"></span>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            Tôi đã đọc và hiểu "Quy tắc bảo hiểm tự nguyện xe cơ giới " hiện hành của BSH. Tôi xin cam
+                            đoan những điều kê khai trên đây là đúng sự thật và xin chịu trách nhiệm về những nội dung
+                            đã kê khai. Đề nghị BSH<span class="form-control border-dotted min-w-20"></span>nhận Bảo
+                            hiểm theo nội dung yêu cầu Bảo hiểm.
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <table class="table table-xs">
+                <tbody>
+                    <tr>
+                        <td colspan="4" class="text-white text-uppercase text-center bg-warning-darkest">
+                            <strong>TÍNH PHÍ CỦA BSH</strong>
+                        </td>
+                    </tr>
+
+                    <tr class="text-warning text-center">
+                        <td>
+                            <strong>Loại nghiệp vụ</strong>
+                        </td>
+                        <td>
+                            <strong>Phí Bảo hiểm</strong>
+                        </td>
+                        <td>
+                            <strong>Thuế VAT</strong>
+                        </td>
+                        <td>
+                            <strong>Tổng thanh toán</strong>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            1. TNDS đối với bên thứ ba
+                        </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            2. TNDS đối với hành khách
+                        </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            3.T/nạn lái, phụ xe và NNTX
+                        </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            4. TNDS đối với hàng hóa
+                        </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            5. Bảo hiểm vật chất xe
+                        </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <strong>Tổng cộng</strong>
+                        </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-danger border-0 py-0">
+                            Trường hợp có nhiều hơn 01 xe thì các nội dung yêu cầu là tổng hợp, đính kèm chi tiết danh
+                            sách YCBH
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="border-0">
+                            <table class="table table-borderless text-center ">
+                                <tbody>
+                                    <tr>
+                                        <td class="w-50 py-0">
+                                            <strong>Người yêu cầu bảo hiểm</strong>
+                                        </td>
+                                        <td class="py-0">
+                                            <strong class="text-uppercase">BẢO HIỂM BSH
+                                                <span class="form-control border-dotted min-w-10 border-2"></span>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <div class="text-center mt-5">
+                <h4><strong class="text-uppercase">DANH SÁCH XE THAM GIA BẢO HIỂM</strong></h4>
+    
+                <p><em>(Là bộ phận đính kèm và không thể tách rời của Giấy yêu cầu bảo hiểm ngày 
+                    <span class="form-control border-dotted min-w-5 border-1"></span> / 
+                    <span class="form-control border-dotted min-w-5 border-1"></span> / 
+                    <span class="form-control border-dotted min-w-5 border-1"></span> )</em></p>
+            </div>
+
+            <table class="table table-xs text-center ">
+                <tbody>
+                    <tr>
+                        <td class="w-5"><strong class="text-uppercase">STT</strong></td>
+                        <td class="w-10"><strong class="text-uppercase">BIỂN KIỂM <br> SOÁT</strong>
+                        </td>
+                        <td class="w-10">
+                            <strong class="text-uppercase">SỐ <br> KHUNG/SỐ <br> MÁY</strong>
+                        </td>
+                        <td class="w-10"><strong class="text-uppercase">MỤC ĐÍCH SỬ <br> DỤNG</strong></td>
+                        <td class="w-10"><strong class="text-uppercase">LOẠI XE/ <br> TRỌNG TẢI</strong></td>
+                        <td class="w-10"><strong class="text-uppercase">NĂM SX</strong></td>
+                        <td class="w-10"><strong class="text-uppercase">NHÃN HIỆU</strong></td>
+                        <td class="w-10">
+                            <strong class="text-uppercase">ĐKBS</strong>
+                        </td>
+                        <td class="w-10"><strong class="text-uppercase">GIÁ TRỊ XE <br> (Khai báo)</strong>
+                        </td>
+                        <td class="w-10"><strong class="text-uppercase">STBH (VND)</strong></td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td>7</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td>8</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td>9</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td>10</td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="8"><strong class="text-uppercase">TỔNG</strong></td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="10" class="border-0">
+                            <div class="w-40 ml-auto mt-3">
+                                <strong class="text-uppercase">
+                                    NGƯỜI YÊU CẦU BẢO HIỂM
+                                </strong>
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </main>
+
+    </div>
+
+</body>
+
+</html>
